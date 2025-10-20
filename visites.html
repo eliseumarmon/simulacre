@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>La Cova del Bolomor - Jaciment</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <header>
+            <h1>Bolomor</h1>
+            <nav>
+                <ul>
+                    <li><a href="inici.html">Inici</a></li>
+                    <li><a href="jaciment.html">Jaciment</a></li>
+                    <li><a href="visites.html">Visites</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="form">
+            <form action="">
+                <fieldset>
+                    <legend>Dades de contacte</legend>
+                    <label for="nom"
+                        >Nom responsable:
+                        <input
+                            type="text"
+                            id="nom"
+                            name="nom"
+                            placeholder="John Doe"
+                            required
+                        />
+                    </label>
+                    <label for="email"
+                        >Correu electrònic:
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="example@example.com"
+                            required
+                    /></label>
+                    <label for="telf"
+                        >Telèfon:
+                        <input
+                            type="tel"
+                            name="telf"
+                            id="telf"
+                            placeholder="000 000 000"
+                            pattern="[0-9]{3}\s[0-9]{3}\s[0-9]{3}"
+                    /></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Informació del grup</legend>
+                    <label for="nombre">
+                        Nombre de persones al grup:
+                        <input
+                            type="number"
+                            name="nombre"
+                            id="nombre"
+                            placeholder="Min: 3 - Max: 10"
+                            min="3"
+                            max="10"
+                            required
+                        />
+                    </label>
+                    <p>Indica si hi ha menors:</p>
+                    <label for="si">
+                        <input type="radio" name="menors" id="si" /> Sí
+                    </label>
+                    <label for="no">
+                        <input type="radio" name="menors" id="no" /> No
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Data de la visita</legend>
+                    <label for="data">
+                        Tria el dia:
+                        <input type="date" name="data" id="data" required />
+                    </label>
+                    <label for="hora">
+                        Tria l'hora:
+                        <input
+                            type="time"
+                            name="hora"
+                            id="hora"
+                            min="09:00"
+                            max="17:00"
+                            value="09:00"
+                            required
+                        />
+                    </label>
+                </fieldset>
+                <div class="flex-center">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reiniciar</button>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <small>© Eliseu Martínez Monrabal 2025</small>
+            <br />
+            <a href="#">Política de privacitat</a>
+        </footer>
+    </body>
+</html>

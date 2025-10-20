@@ -25,16 +25,23 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: "Montserrat Variable", sans-serif;
     background: var(--primary);
     font-size: 16px;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 header {
     display: flex;
     flex-direction: column;
     padding-block: 1rem;
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     background: var(--header-footer);
@@ -87,11 +94,44 @@ header ul {
 }
 
 #fita {
+    padding-block: 2rem;
     background-image: url("../img/bgimg3.jpg");
 }
 
-#final {
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url("../img/bgimg4.jpg");
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+        transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: rotate(5deg);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: rotate(-5deg);
+    }
+}
+
+img {
+    max-width: 50vw;
+}
+
+img:hover {
+    animation: shake 1s;
 }
 
 .parallax {
@@ -107,6 +147,11 @@ header ul {
 }
 
 .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: auto;
     width: 100%;
 
@@ -154,5 +199,80 @@ footer {
         &:hover {
             color: var(--header-footer-hover);
         }
+    }
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+input:not([type="radio"]):not([type="checkbox"]) {
+    padding: 0.4rem;
+    margin-top: 0.3rem;
+    width: 100%;
+}
+
+input::placeholder {
+    font-size: 1.125rem;
+}
+
+fieldset {
+    padding-inline: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    padding-inline: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+form {
+    padding: 3rem;
+    color: var(--primary);
+    height: 100%;
+    width: 50%;
+    background-image: url("../img/bg2.png");
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+}
+
+form p {
+    margin-bottom: 0.4rem;
+}
+
+form button {
+    color: var(--primary);
+    background-color: var(--header-footer);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 10rem;
+    text-align: center;
+    font-size: 1.125rem;
+
+    &:hover,
+    &:focus {
+        background-color: var(--header-footer-hover);
+        box-shadow: 1px 1px 3px black;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+form button[type="reset"] {
+    background-color: var(--primary);
+    color: var(--header-footer);
+
+    &:hover,
+    &:focus {
+        background-color: var(--odd-header);
     }
 }
